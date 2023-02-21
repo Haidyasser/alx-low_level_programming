@@ -10,5 +10,6 @@ int main(void)
 
 	for (i = 0; i <= 7; i++)
 		_putchar (s[i]);
+	_putchar ('\n');
 	return (0);
 }
