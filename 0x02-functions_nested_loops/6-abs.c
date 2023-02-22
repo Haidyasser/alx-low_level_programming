@@ -4,7 +4,7 @@
  *@n : the number to check
  * Return: absolute function.
  */
-int print_sign(int n)
+int _abs(int n)
 {
 	if (n < 0)
 		n *= -1;
