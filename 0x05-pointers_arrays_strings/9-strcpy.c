@@ -15,6 +15,6 @@ char *_strcpy(char *dest, const char *src)
 		dest[index] = src[index];
 		index++;
 	}
-
+	dest[index] = '\0';
 	return (dest);
 }
