@@ -17,6 +17,6 @@ unsigned int _strspn(char *s, char *accept)
 		vis[s[i++] - 'a']++;
 	i = 0;
 	while (vis[accept[i] - 'a'])
-		vis[accept[i++] - 'a']--;
+		i++;
 	return (i);
 }
