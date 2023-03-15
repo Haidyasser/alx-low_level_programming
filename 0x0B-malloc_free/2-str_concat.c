@@ -5,7 +5,7 @@
 * str_concat - a function that concatenates two strings.
 * @s1: first string
 * @s2: second string
-* Return : The returned pointer should point to a newly allocated space in
+* Return: The returned pointer should point to a newly allocated space in
 * memory which contains the contents of s1,
 * followed by the contents of s2, and null terminated
 */
@@ -24,6 +24,8 @@ char *str_concat(char *s1, char *s2)
 	while (s2[len2])
 		len2++;
 	conc = malloc(len1 + len2 + 1);
+	if (conc == NULL)
+		return (NULL);
 	for (i = 0; i < len1; i++)
 		conc[i] = s1[i];
 	for (i = 0; i < len2; i++)
