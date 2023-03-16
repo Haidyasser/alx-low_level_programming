@@ -14,23 +14,23 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int len = n, i;
+	unsigned len = n, i;
 	char *conc;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	for (i = 0; s2[i] && i < n; i++)
+	for (i = 0; s1[i]; i++)
 		len++;
-	conc = malloc(sizeof(char) * len);
+	conc = malloc(sizeof(char) * len + 1);
 	if (conc == NULL)
 		return (NULL);
 	len = 0;
 	for (i = 0; s1[i]; i++, len++)
 		conc[i] = s1[i];
 	for (i = 0; s2[i] && i < n; i++, len++)
-		conc[i] = s2[i];
+		conc[len] = s2[i];
 	conc[len] = '\0';
 
 	return (conc);
