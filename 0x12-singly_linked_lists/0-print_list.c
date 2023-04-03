@@ -45,7 +45,7 @@ size_t print_list(const list_t *h)
 		{
 		_putchar('[');
 		/* print the length of the string here */
-		print_unsigned_int(h -> len);
+		print_unsigned_int(h->len);
 		_putchar(']');
 		_putchar(' ');
 		_puts(h->str);
