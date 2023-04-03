@@ -25,20 +25,21 @@ size_t print_list(const list_t *h)
 
 	while (h != NULL)
 	{
-	if (h->str == NULL)
-	{
-		_puts("[0] (nil)");
-		_putchar('\n');
-	}
-	else
-	{
+		if (h->str == NULL)
+		{
+			_puts("[0] (nil)");
+			_putchar('\n');
+		}
+		else
+		{
 		_putchar('[');
-	/* print the length of the string here */
+		/* print the length of the string here */
+		_putchar(h -> len  + '0');
 		_putchar(']');
 		_putchar(' ');
 		_puts(h->str);
 		_putchar('\n');
-	}
+		}
 		h = h->next;
 		count++;
 	}
