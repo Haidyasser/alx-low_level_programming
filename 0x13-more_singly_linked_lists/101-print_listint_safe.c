@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "lists.h"
 
+size_t print_loop(const listint_t *head, const listint_t *loop);
+void print_node(const listint_t *node);
+
 /**
  * print_listint_safe - prints a listint_t linked list
  * @head: pointer to the head of the list
