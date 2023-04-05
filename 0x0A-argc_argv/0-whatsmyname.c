@@ -9,8 +9,11 @@
  *
  * Return: 0 on success
  */
+
 int main(int argc, char **argv)
 {
-	printf("%s\n", basename(argv[0]));
-	return (0);
+    (void)argc;
+    printf("%s\n", basename(argv[0]));
+    return (0);
 }
+
