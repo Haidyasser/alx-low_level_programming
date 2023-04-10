@@ -12,8 +12,8 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd
-	ssize_t = n_read, n_write;
+	int fd;
+	ssize_t n_read, n_write;
 	char *buf;
 
 	if (!filename)
@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	n_write = write(1, buf, n_read);
-	if (n_write == -1 || n_write != letters)
+	if (n_write == -1 || n_write != n_read)
 		return (0);
 
 	free(buf);
