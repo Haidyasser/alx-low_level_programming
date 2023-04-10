@@ -32,6 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	n_read = read(fd, buf, letters);
 	if (n_read == -1)
 	{
+		free(buf);
 		close(fd);
 		return (0);
 	}
@@ -39,6 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	n_write = write(1, buf, n_read);
 	if (n_write == -1 || n_write != n_read)
 	{
+		free(buf);
 		close(fd);
 		return (0);
 	}
