@@ -16,8 +16,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	size_t n = 0;
-	int fd;
+	ssize_t n = -1, fd;
 
 	if (!filename)
 		return (-1);
@@ -27,5 +26,5 @@ int create_file(const char *filename, char *text_content)
 	if (text_content)
 		n = write(fd, text_content, strlen(text_content));
 	close(fd);
-	return ((n) & (n == strlen(text_content)) ? 1 : -1);
+	return ((n != -1) ? 1 : -1);
 }
