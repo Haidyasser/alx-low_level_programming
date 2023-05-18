@@ -51,12 +51,13 @@ void open_files(char **av, int *fd_from, int *fd_to)
  */
 void copy_file(int fd_from, int fd_to, char **av)
 {
-	ssize_t n;
+	ssize_t n, w;
 	char buf[BUFSIZE];
 
 	while ((n = read(fd_from, buf, BUFSIZE)) > 0)
 	{
-		if (write(fd_to, buf, n) != n)
+		w = write(fd_to, buf, n);
+		if (w != n || w == -1)
 		{
 			close(fd_from);
 			close(fd_to);
